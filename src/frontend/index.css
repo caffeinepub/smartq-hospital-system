@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.98 0.005 220;
+    --foreground: 0.15 0.02 250;
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.02 250;
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.02 250;
+    --primary: 0.52 0.18 240;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.95 0.015 220;
+    --secondary-foreground: 0.2 0.03 240;
+    --muted: 0.96 0.01 220;
+    --muted-foreground: 0.5 0.02 240;
+    --accent: 0.55 0.16 185;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1 0 0;
+    --border: 0.9 0.015 220;
+    --input: 0.9 0.015 220;
+    --ring: 0.52 0.18 240;
+    --radius: 0.75rem;
+    --chart-1: 0.52 0.18 240;
+    --chart-2: 0.55 0.16 185;
+    --chart-3: 0.6 0.14 160;
+    --chart-4: 0.7 0.12 200;
+    --chart-5: 0.65 0.15 210;
+  }
+
+  .dark {
+    --background: 0.12 0.02 250;
+    --foreground: 0.95 0.01 220;
+    --card: 0.17 0.025 250;
+    --card-foreground: 0.95 0.01 220;
+    --popover: 0.17 0.025 250;
+    --popover-foreground: 0.95 0.01 220;
+    --primary: 0.65 0.18 240;
+    --primary-foreground: 0.1 0.01 240;
+    --secondary: 0.22 0.03 250;
+    --secondary-foreground: 0.9 0.01 220;
+    --muted: 0.22 0.03 250;
+    --muted-foreground: 0.6 0.02 240;
+    --accent: 0.6 0.16 185;
+    --accent-foreground: 0.1 0.01 185;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1 0 0;
+    --border: 0.28 0.03 250;
+    --input: 0.28 0.03 250;
+    --ring: 0.65 0.18 240;
+    --chart-1: 0.65 0.18 240;
+    --chart-2: 0.6 0.16 185;
+    --chart-3: 0.65 0.14 160;
+    --chart-4: 0.7 0.12 200;
+    --chart-5: 0.68 0.15 210;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+.animate-gradient { animation: gradient-shift 8s ease infinite; background-size: 200% 200%; }
+.animate-slide-up { animation: slide-up 0.6s ease forwards; }
+
+.glass-card {
+  @apply backdrop-blur-md bg-white/70 dark:bg-white/5 border border-white/30 dark:border-white/10 shadow-xl;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 30%, #0d9488 70%, #14b8a6 100%);
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl;
+}
